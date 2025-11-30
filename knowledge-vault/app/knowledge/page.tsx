@@ -11,32 +11,37 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import { useParams } from 'next/navigation'
 
 const page = () => {
 
+    // Store knowledge in variable
     const [showknowledge, setShowknowledge] = useState<TechItem[] | null>(null)
 
-    // Retrived email from youtube
+    // Retrieved email from hook
     const { email } = useCurrentUser()
-    // console.log(email)
 
+    // Retrieved id from params
+    const {id} = useParams()
+
+    // Run knowledge function when email is available
     useEffect(() => {
-        // If there is email knoelege function will run
         if (email) {
             knowledge()
         }
     }, [email])
 
-
+    // Fetch TechKnowledge data from backend
     const knowledge = async () => {
-        //Get TechKnowledge data from backend
         const getknowledge = await getTechKnowledgeVault(email || "")
         setShowknowledge(getknowledge)
     }
+
+    // Render knowledge cards in a grid layout
     return (
         <div>
             {showknowledge && showknowledge.map((k) =>
-            <div key={k.id} className=''>
+            <a key={k.id} href={`/single/${k.id}`}>
                 <Card className='h-70 w-80' key={k.id}>
                     <CardContent>
                         <img className='h-20 w-20' src={k.img}/>
@@ -46,9 +51,8 @@ const page = () => {
                         <CardDescription>{k.desc}</CardDescription>
                     </CardHeader>
                 </Card>
-                </div>
+                </a>
             )}
-
         </div>
     )
 }
