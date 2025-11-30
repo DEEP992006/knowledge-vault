@@ -13,6 +13,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import KnowledgeCard from '@/components/ui/knowledge/KnowledgeCard'
 
 const page = () => {
     // State to hold the single tech item
@@ -40,19 +41,13 @@ const page = () => {
         <div>
             <div>
                 {getsingleTech &&
-                    <div>
-                        <Card className='h-70 w-80'>
-                            <CardContent>
-                                {/* Display tech item image */}
-                                <img className='h-20 w-20' src={getsingleTech.img} />
-                            </CardContent>
-                            <CardHeader>
-                                {/* Display tech item name and description */}
-                                <CardTitle>{getsingleTech.name}</CardTitle>
-                                <CardDescription>{getsingleTech.desc}</CardDescription>
-                            </CardHeader>
-                        </Card>
-                    </div>
+                // Call Knowledgecard from components
+                    <KnowledgeCard
+                    id={getsingleTech.id}
+                    img={getsingleTech.img}
+                    name={getsingleTech.name}
+                    desc={getsingleTech.desc}
+                    />
                 }
             </div>
         </div>
