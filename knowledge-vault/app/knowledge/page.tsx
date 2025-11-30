@@ -2,16 +2,9 @@
 import { useCurrentUser } from '@/hook/hook'
 import { getTechKnowledgeVault, TechItem } from '@/lib/tech-data'
 import React, { useEffect, useState } from 'react'
-import {
-    Card,
-    CardAction,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
+
 import { useParams } from 'next/navigation'
+import KnowledgeCard from '@/components/ui/knowledge/KnowledgeCard'
 
 const page = () => {
 
@@ -22,7 +15,7 @@ const page = () => {
     const { email } = useCurrentUser()
 
     // Retrieved id from params
-    const {id} = useParams()
+    const { id } = useParams()
 
     // Run knowledge function when email is available
     useEffect(() => {
@@ -41,18 +34,16 @@ const page = () => {
     return (
         <div>
             {showknowledge && showknowledge.map((k) =>
-            <a key={k.id} href={`/single/${k.id}`}>
-                <Card className='h-70 w-80' key={k.id}>
-                    <CardContent>
-                        <img className='h-20 w-20' src={k.img}/>
-                    </CardContent>
-                    <CardHeader>
-                        <CardTitle>{k.name}</CardTitle>
-                        <CardDescription>{k.desc}</CardDescription>
-                    </CardHeader>
-                </Card>
-                </a>
+            // Call Knowledgecard from components
+            <KnowledgeCard 
+            key={k.id}
+            id={k.id}
+            img={k.img}
+            name={k.name}
+            desc={k.desc}
+            />
             )}
+
         </div>
     )
 }
