@@ -5,7 +5,7 @@ export interface TechItem {
   img: string;
 }
 
-export const getTechKnowledgeVault = (email:string): TechItem[] => {
+export const getTechKnowledgeVault = (email: string = ""): TechItem[] => {
   return [
     {
       id: 1,
@@ -68,4 +68,9 @@ export const getTechKnowledgeVault = (email:string): TechItem[] => {
       img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
     }
   ];
+}
+
+export const getTechItemById = (id: number, email: string = ""): TechItem | undefined => {
+  const items = getTechKnowledgeVault(email);
+  return items.find(item => item.id === id);
 }
