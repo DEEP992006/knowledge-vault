@@ -45,6 +45,7 @@ export function Header() {
     { label: 'Quizzes', href: '/quiz' },
     { label: 'Add Knowledge', href: '/new' },
     { label: 'My Knowledge', href: '/userall' },
+    { label: 'AI ✨', href: '/knowledge/ai' },
   ];
 
   return (
