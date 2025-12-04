@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4">
 
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-6xl font-bold bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 
+              <h1 className="text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 
               bg-clip-text text-transparent">
                 Knowledge Vault
               </h1>
@@ -64,7 +64,7 @@ export default function HomePage() {
                 { title: "Explore Knowledge", desc: "Browse community insights", href: "/knowledge" },
                 { title: "Take a Quiz", desc: "Test your skills with quizzes", href: "/quiz" },
                 { title: "Add Knowledge", desc: "Share and save your ideas", href: "/new" },
-                { title: "Add Quiz", desc: "Access your personal quiz", href: "/newquiz" }
+                { title: "AI Content ✨", desc: "Generate content through AI", href: "/knowledge/ai" },
               ].map((item) => (
                 <Link
                   key={item.title}
@@ -83,7 +83,6 @@ export default function HomePage() {
 
           </div>
         </section>
-
 
         {/* Features Section */}
         <section className="py-24 bg-slate-900/20 border-t border-white/5 backdrop-blur-md">
