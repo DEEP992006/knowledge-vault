@@ -2,15 +2,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer
-      className="
-        bg-card/60 backdrop-blur-xl 
-        border-t border-blue-200/30 
-        mt-16
-        shadow-[0_-4px_18px_rgba(125,211,252,0.15)]
-        transition-all
-      "
-    >
+    <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Footer Grid */}
@@ -18,18 +10,11 @@ export function Footer() {
 
           {/* Column */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 tracking-wide">Product</h3>
-            <ul className="space-y-2">
+            <h3>Product</h3>
+            <ul>
               {["Features", "Pricing", "Security"].map((item) => (
                 <li key={item}>
-                  <Link
-                    href="#"
-                    className="
-                      text-muted-foreground text-sm 
-                      hover:text-blue-500 
-                      transition-colors duration-300
-                    "
-                  >
+                  <Link href="#">
                     {item}
                   </Link>
                 </li>
@@ -39,18 +24,11 @@ export function Footer() {
 
           {/* Column */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 tracking-wide">Company</h3>
-            <ul className="space-y-2">
+            <h3>Company</h3>
+            <ul>
               {["About", "Blog", "Contact"].map((item) => (
                 <li key={item}>
-                  <Link
-                    href="#"
-                    className="
-                      text-muted-foreground text-sm 
-                      hover:text-blue-500 
-                      transition-colors duration-300
-                    "
-                  >
+                  <Link href="#">
                     {item}
                   </Link>
                 </li>
@@ -60,18 +38,11 @@ export function Footer() {
 
           {/* Column */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 tracking-wide">Resources</h3>
-            <ul className="space-y-2">
+            <h3>Resources</h3>
+            <ul>
               {["Help Center", "Documentation", "API"].map((item) => (
                 <li key={item}>
-                  <Link
-                    href="#"
-                    className="
-                      text-muted-foreground text-sm 
-                      hover:text-blue-500 
-                      transition-colors duration-300
-                    "
-                  >
+                  <Link href="#">
                     {item}
                   </Link>
                 </li>
@@ -81,18 +52,11 @@ export function Footer() {
 
           {/* Column */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 tracking-wide">Legal</h3>
-            <ul className="space-y-2">
+            <h3>Legal</h3>
+            <ul>
               {["Privacy", "Terms", "Cookies"].map((item) => (
                 <li key={item}>
-                  <Link
-                    href="#"
-                    className="
-                      text-muted-foreground text-sm
-                      hover:text-blue-500 
-                      transition-colors duration-300
-                    "
-                  >
+                  <Link href="#">
                     {item}
                   </Link>
                 </li>
@@ -102,27 +66,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div
-          className="
-            border-t border-blue-200/20 
-            pt-8 flex items-center justify-between
-          "
-        >
-          <p className="text-muted-foreground text-sm">
+        <div>
+          <p>
             © 2025 Knowledge Vault. All rights reserved.
           </p>
 
-          <div className="flex gap-4">
+          <div>
             {["Twitter", "GitHub", "LinkedIn"].map((social) => (
               <Link
                 key={social}
                 href="#"
-                className="
-                  text-muted-foreground 
-                  hover:text-blue-500 
-                  transition-colors duration-300 
-                  hover:underline underline-offset-4
-                "
               >
                 {social}
               </Link>
